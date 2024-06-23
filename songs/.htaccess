@@ -1,25 +1,2 @@
 Options +Indexes
 IndexOptions FancyIndexing NameWidth=* DescriptionWidth=*
-
-
-# Enable Rewrite Engine
-RewriteEngine On
-
-# Specify the Rewrite Base
-RewriteBase /
-
-# Example Rewrite Rule to ensure URLs are properly formed
-RewriteRule ^Songs/All/ - [L]
-
-# Handle 404 Errors with a custom page
-ErrorDocument 404 /404.html
-
-# Allow all files in the Songs/All directory to be served
-<Directory "Songs/All/">
-    Options Indexes FollowSymLinks
-    AllowOverride All
-    Require all granted
-</Directory>
-
-# Set default index file
-DirectoryIndex index.html
